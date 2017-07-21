@@ -22,6 +22,9 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
+        .todo-item{
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -30,7 +33,7 @@
         <input type="text" placeholder="Add Todo" required ng-model="newTodo.name" >
         <input type="text" placeholder="Add Todo Details" required  ng-model="newTodo.details">
         <br>
-        <button ng-click="addTodo(newTodo.name,newTodo.details)" id="todo-add-btn">Click To Add</button>
+        <button ng-click="addTodo(newTodo)" id="todo-add-btn">Click To Add</button>
         <div class="todo-item" ng-repeat="todo in todoArray">
             <h3>{{ todo.title + " : "  }}</h3>
             <p>{{ todo.details}}</p>

@@ -25,8 +25,8 @@ ngTodo.controller('mainController',function($scope){
         }
                         ];
     
-    $scope.addTodo = function(newTodoName,newTodoDetails){
-        $scope.todoArray.splice(0,0, { title : newTodoName, details : newTodoDetails});
+    $scope.addTodo = function(newTodo){
+        $scope.todoArray.splice(0,0, { title : newTodo.name, details : newTodo.details});
     }
     
     $scope.removeTodo = function(todoName){
