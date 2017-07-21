@@ -2,8 +2,10 @@
 <html lang="en" ng-app="ngTodo">
 <head>
     <meta charset="UTF-8">
+    
+    <link href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <script src="angular.min.js"></script>
-    <script src="main.js"></script>
+    
     <style>
         h1{
             text-align: center;
@@ -32,8 +34,10 @@
         <div class="todo-item" ng-repeat="todo in todoArray">
             <h3>{{ todo.title + " : "  }}</h3>
             <p>{{ todo.details}}</p>
-            <button ng-click="removeTodo(todo.title)">Remove</button>
+            <button ng-click="removeTodo(todo.title)">Remove&nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
         </div>
     </div>
+    <script src="main.js"></script>
 </body>
 </html>

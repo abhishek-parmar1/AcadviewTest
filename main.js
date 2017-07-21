@@ -37,6 +37,5 @@ ngTodo.controller('mainController',function($scope){
                 break;
         }
         $scope.todoArray.splice(index,1);
-        console.log(index)
     }
 });
