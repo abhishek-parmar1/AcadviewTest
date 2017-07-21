@@ -25,11 +25,18 @@ ngTodo.controller('mainController',function($scope){
         }
                         ];
     
-    $scope.addTodo = function(todaName,todoDetails){
-        $scope.todoArray.splice(0,0, { title : todaName, details : todoDetails});
+    $scope.addTodo = function(newTodoName,newTodoDetails){
+        $scope.todoArray.splice(0,0, { title : newTodoName, details : newTodoDetails});
     }
     
     $scope.removeTodo = function(todoName){
-        index = $scope.todoArray()
+        index = 0;
+        for( index =0; index<$scope.todoArray.length; index++)
+        {
+            if($scope.todoArray[index].title == todoName)
+                break;
+        }
+        $scope.todoArray.splice(index,1);
+        console.log(index)
     }
 });

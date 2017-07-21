@@ -25,14 +25,14 @@
 <body>
     <div ng-controller="mainController">
         <h1>Todays Todo's List</h1>
-        <input type="text" placeholder="Add Todo" required ng-model="todo.name" >
-        <input type="text" placeholder="Add Todo Details" required  ng-model="todo.details">
+        <input type="text" placeholder="Add Todo" required ng-model="newTodo.name" >
+        <input type="text" placeholder="Add Todo Details" required  ng-model="newTodo.details">
         <br>
-        <button ng-click="addTodo(todo.name,todo.details)" id="todo-add-btn">Click To Add</button>
+        <button ng-click="addTodo(newTodo.name,newTodo.details)" id="todo-add-btn">Click To Add</button>
         <div class="todo-item" ng-repeat="todo in todoArray">
             <h3>{{ todo.title + " : "  }}</h3>
             <p>{{ todo.details}}</p>
-            <button ng-click="removeTodo(todo.name)">Remove</button>
+            <button ng-click="removeTodo(todo.title)">Remove</button>
         </div>
     </div>
 </body>
