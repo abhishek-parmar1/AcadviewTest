@@ -5,16 +5,30 @@
     <script src="angular.min.js"></script>
     <script src="main.js"></script>
     <style>
+        h2{
+            text-align: center;
+        }
         p.todo-item{
             border: 2px solid grey;
+            padding: 5px;
+        }
+        input,
+        button{
+            margin-right: 20px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div ng-controller="mainController">
         <h2>Todays Todo's List</h2>
+        <input type="text" placeholder="Add Todo" required ng-model="todo.name" >
+        <input type="text" placeholder="Add Todo Details" required  ng-model="todo.details">
+        <br>
+        <button ng-click="addTodo(todo.name,todo.details)">Click To Add</button>
         <p class="todo-item" ng-repeat="todo in todoArray">
-            {{ todo }}
+            {{ todo.title + " :- " }}
+            {{ todo.details}}
         </p>
     </div>
 </body>
