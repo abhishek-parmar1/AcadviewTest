@@ -41,7 +41,7 @@
         <div class="todo-item" ng-repeat="todo in todoArray | filter : query">
             <h3>{{ todo.title + " : "  }}</h3>
             <p>{{ todo.details}}</p>
-            <button ng-click="removeTodo(todo)">Remove&nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i>
+            <button ng-click="removeTodo($index)">Remove&nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i>
             </button>
         </div>
     </div>
