@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <script src="angular.min.js"></script>
     <script src="main.js"></script>
+    <style>
+        p.todo-item{
+            border: 2px solid grey;
+        }
+    </style>
 </head>
 <body>
     <div ng-controller="mainController">
-        <ul>
-            <li ng-repeat="todo in todoArray">
-                {{ todo }}
-            </li>
-        </ul>
+        <h2>Todays Todo's List</h2>
+        <p class="todo-item" ng-repeat="todo in todoArray">
+            {{ todo }}
+        </p>
     </div>
 </body>
 </html>
