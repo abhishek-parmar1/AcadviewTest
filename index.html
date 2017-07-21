@@ -5,31 +5,35 @@
     <script src="angular.min.js"></script>
     <script src="main.js"></script>
     <style>
-        h2{
+        h1{
             text-align: center;
         }
-        p.todo-item{
+        div.todo-item{
             border: 2px solid grey;
             padding: 5px;
+            padding-left:20px; 
         }
-        input,
-        button{
+        input{
             margin-right: 20px;
-            margin-top: 20px;
+        }
+        #todo-add-btn{
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <div ng-controller="mainController">
-        <h2>Todays Todo's List</h2>
+        <h1>Todays Todo's List</h1>
         <input type="text" placeholder="Add Todo" required ng-model="todo.name" >
         <input type="text" placeholder="Add Todo Details" required  ng-model="todo.details">
         <br>
-        <button ng-click="addTodo(todo.name,todo.details)">Click To Add</button>
-        <p class="todo-item" ng-repeat="todo in todoArray">
-            {{ todo.title + " :- " }}
-            {{ todo.details}}
-        </p>
+        <button ng-click="addTodo(todo.name,todo.details)" id="todo-add-btn">Click To Add</button>
+        <div class="todo-item" ng-repeat="todo in todoArray">
+            <h3>{{ todo.title + " : "  }}</h3>
+            <p>{{ todo.details}}</p>
+            <button ng-click="removeTodo(todo.name)">Remove</button>
+        </div>
     </div>
 </body>
 </html>
