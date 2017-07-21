@@ -7,7 +7,11 @@
 </head>
 <body>
     <div ng-controller="mainController">
-        {{hello()}}
+        <ul>
+            <li ng-repeat="todo in todoArray">
+                {{ todo }}
+            </li>
+        </ul>
     </div>
 </body>
 </html>
