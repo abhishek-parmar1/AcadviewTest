@@ -29,13 +29,9 @@ ngTodo.controller('mainController',function($scope){
         $scope.todoArray.splice(0,0, { title : newTodo.name, details : newTodo.details});
     }
     
-    $scope.removeTodo = function(todoName){
-        index = 0;
-        for( index =0; index<$scope.todoArray.length; index++)
-        {
-            if($scope.todoArray[index].title == todoName)
-                break;
-        }
+    $scope.removeTodo = function(todo){
+        index = $scope.todoArray.indexOf(todo);
         $scope.todoArray.splice(index,1);
+        console.log(index);
     }
 });
